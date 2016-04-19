@@ -149,7 +149,7 @@ class hdfs_namenode {
   ->
   file { "/tmp/concept.txt":
     ensure => file,
-    source => dos2unix("/vagrant/modules/c3po_java/files/concept.txt"),
+    source => dos2unix("/vagrant/modules/hdfs_namenode/files/concept.txt"),
     owner => c3po,
     group => hadoop,
   }
@@ -163,7 +163,7 @@ class hdfs_namenode {
   ->
   file { "/tmp/person-merged.txt":
     ensure => file,
-    source => dos2unix("/vagrant/modules/c3po_java/files/person-merged.txt"),
+    source => dos2unix("/vagrant/modules/hdfs_namenode/files/person-merged.txt"),
     owner => c3po,
     group => hadoop,
   }
@@ -177,7 +177,7 @@ class hdfs_namenode {
   ->
   file { "/tmp/death-merged.txt":
     ensure => file,
-    source => dos2unix("/vagrant/modules/c3po_java/files/death-merged.txt"),
+    source => dos2unix("/vagrant/modules/hdfs_namenode/files/death-merged.txt"),
     owner => c3po,
     group => hadoop,
   }
@@ -191,7 +191,7 @@ class hdfs_namenode {
   ->
   file { "/tmp/observation-merged.txt":
     ensure => file,
-    source => dos2unix("/vagrant/modules/c3po_java/files/observation-merged.txt"),
+    source => dos2unix("/vagrant/modules/hdfs_namenode/files/observation-merged.txt"),
     owner => c3po,
     group => hadoop,
   }
