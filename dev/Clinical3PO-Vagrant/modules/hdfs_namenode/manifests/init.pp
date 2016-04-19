@@ -147,6 +147,18 @@ class hdfs_namenode {
     user => "hdfs",
   }
   ->
+  exec {"c3po-cdw-chown-1st":
+    command => "hdfs dfs -chown -R c3po:hadoop /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  exec {"c3po-cdw-chmod-1st":
+    command => "hdfs dfs -chmod -R 775 /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
   file { "/tmp/concept.txt":
     ensure => file,
     source => dos2unix("/vagrant/modules/hdfs_namenode/files/concept.txt"),
@@ -203,13 +215,13 @@ class hdfs_namenode {
     user => "c3po",
   }
   ->
-  exec {"c3po-cdw-chown":
+  exec {"c3po-cdw-chown-2nd":
     command => "hdfs dfs -chown -R c3po:hadoop /data",
     path => "$path",
     user => "hdfs",
   }
   ->
-  exec {"c3po-cdw-chmod":
+  exec {"c3po-cdw-chmod-2nd":
     command => "hdfs dfs -chmod -R 775 /data",
     path => "$path",
     user => "hdfs",
